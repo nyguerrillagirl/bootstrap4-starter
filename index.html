@@ -94,7 +94,7 @@
                     <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
        
                     <form>
-                         <div  class="row">
+                         <div  class="form-group row">
                              <div class="col-md-2 ml-4 mt-4">
                                 <label for="num_of_guests">Number of Guests:</label>
                             </div>
@@ -132,14 +132,26 @@
                             </div>
                         </div>
                       
-                        <div class="row">
+                        <div class="form-group row">
                             <div class="col-md-2 ml-4 mt-4">
                                 <label for="num_of_guests">Date and Time:</label>
                             </div>
-                            
+                            <div class="col-3 mt-4 ml-0">
+                                <input placeholder="Date" type='text' class="form-control" id='datepicker'>
+                            </div>
+                            <div class="col-3 mt-4"">
+                                <input placeholder="Time"  type= 'text' id="timepicker" class="form-control">
+                            </div> 
                         </div>
 
-                        <div class="form-group row"></div>
+                        <div class="form-group row">
+                            <div class="col-md-2 ml-4 mt-4"></div>
+                            <div class="col-md-8">
+                                <button type="submit" class="btn btn-primary">
+                                    Reserve
+                                </button>
+                            </div>
+                        </div>                        
                      </form>
                 </div>
             </div>
@@ -193,5 +205,11 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Script -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+        $('#datepicker').datepicker(); 
+        });
+    </script>
 </body>
 </html>
