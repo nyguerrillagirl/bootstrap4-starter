@@ -126,16 +126,17 @@
                             <label for="num_of_guests">Section</label>
                         </div>
                        <div class="col-12 col-sm-12 col-md-2 ml-4 mt-4">
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary btn-success active">
-                              <input type="radio" name="smoking_option" id="non_smoking" autocomplete="off" checked>
+                        <div class="custom-control custom-radio custom-control-inline btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-success active">
+                              <input type="radio" name="smokingOption" id="nonsmoking" class="custom-control-input" autocomplete="off" checked>
                               Non-Smoking 
                             </label>
-                            <label class="btn btn-secondary btn-danger">
-                              <input type="radio" name="smoking_option" id="smoking" autocomplete="off">
+                            <label class="btn btn-danger">
+                              <input type="radio" name="smokingOption" id="smoking" class="custom-control-input" autocomplete="off">
                               Smoking
                             </label>
-                          </div>                        </div>
+                          </div>                        
+                        </div>
                    </div>
                    <div class="form-group row">
                        <div class="col-12 col-sm-12 col-md-2 ml-4 mt-4">
@@ -345,5 +346,8 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   
+    <script>
+        $('#nonsmoking').prop('indeterminate', true)
+    </script>
 </body>
 </html>
