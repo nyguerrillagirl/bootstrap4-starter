@@ -241,16 +241,11 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
-                    <!-- WE START OUR WORK HERE -->
-                    <div class="btn-group" id="carouselButton">
-                        <button class="btn btn-danger btn-sm" id="carousel-pause">
-                            <span class="fa fa-pause"></span>
-                        </button>
-                        <button class="btn btn-danger btn-sm" id="carousel-play">
-                            <span class="fa fa-play"></span>
-                        </button>                   
-                    </div>
-             </div>
+                    <!-- WE HAVE OUR PAUSE and RESULT BUTTONS HERE -->
+                    <button class="btn btn-danger btn-sm" id="carouselButton">
+                        <span class="fa fa-pause"></span>
+                    </button>
+               </div>
             </div>
         </div>
         <div class="row row-content align-items-center">
@@ -365,11 +360,17 @@
                return true;
            });
            $('#mycarousel').carousel({ interval: 2000});
-           $('#carousel-pause').click(function() {
-               $('#mycarousel').carousel('pause');
-           });
-           $('#carousel-play').click(function() {
-               $('#mycarousel').carousel('cycle');
+           $('#carouselButton').click(function() {
+               if ($('#carouselButton').children('span').hasClass('fa-pause')) {
+                    $('#mycarousel').carousel('pause');
+                    $('#carouselButton').children('span').removeClass('fa-pause');
+                    $('#carouselButton').children('span').addClass('fa-play');
+                } else {
+                    $('#mycarousel').carousel('cycle');
+                    $('#carouselButton').children('span').removeClass('fa-play');
+                    $('#carouselButton').children('span').addClass('fa-pause');
+               }
+               
            });
 
        }) ;
