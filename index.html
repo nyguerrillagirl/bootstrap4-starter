@@ -29,7 +29,7 @@
                     <li class="nav-item"><a class="nav-link" href="/contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a  id="login_btn" href="#">
                         <span class="fa fa-sign-in"></span>Login
                     </a>
                 </span>
@@ -182,9 +182,7 @@
                             <img src="img/logo.png" class="img-fluid">
                         </div>
                         <div class="col-12 col-sm media-body align-self-center">
-                            <a role="button" class="btn btn-block nav-link btn-warning" 
-                                data-toggle="modal" 
-                                data-target="#reserveTableModal"
+                            <a role="button" class="btn btn-block nav-link btn-warning" id="reserve_table_btn"
                                 href="#reserve_table">
                             <strong>Reserve Table</strong>
                             </a>      
@@ -372,6 +370,19 @@
                }
                
            });
+
+           // Handles Login modal display on click
+           $('#login_btn').click(function() {
+               console.log('login modal clicked - open model...');
+               $('#loginModal').modal('show');
+               return false;
+           });
+
+           // Handles Reserve Table modal display on button click
+           $('#reserve_table_btn').click(function() {
+            console.log('reserve table modal clicked - open model...');
+               $('#reserveTableModal').modal('show');
+          });
 
        }) ;
     </script>
